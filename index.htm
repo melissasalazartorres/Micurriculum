@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #eeeeee;
+            font-family: "Times New Roman", serif;
+            margin: 20px;
+            color: #222;
+        }
+
+        .curriculum {
+            width: 750px;
+            min-height: 950px;
+            margin: auto;
+            background-color: white;
+            border: 2px solid #b8b8ae;
+        }
+
+        .encabezado {
+            display: flex;
+            height: 115px;
+            border-bottom: 1px solid #aaa;
+        }
+
+        .titulo {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .foto {
+            width: 115px;
+            border-left: 1px solid #aaa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .foto label {
+            width: 75px;
+            height: 75px;
+            border: 1px solid #aaa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .foto input {
+            display: none;
+        }
+
+        .contenido {
+            padding: 22px;
+        }
+
+        h3 {
+            font-size: 21px;
+            margin-top: 22px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 8px;
+        }
+
+        .datos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px 20px;
+        }
+
+        .campo {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+
+        .campo label {
+            min-width: 145px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="tel"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            outline: none;
+            font-family: inherit;
+            font-size: 15px;
+            padding: 4px;
+        }
+
+        .completo {
+            display: flex;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .completo label {
+            min-width: 145px;
+        }
+
+        .completo input {
+            flex: 1;
+        }
+
+        textarea {
+            width: 100%;
+            height: 65px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            padding: 8px;
+            font-family: inherit;
+        }
+
+        .declaracion {
+            margin-top: 35px;
+            font-size: 15px;
+        }
+
+        .botones {
+            text-align: center;
+            margin: 25px;
+        }
+
+        button {
+            padding: 10px 22px;
+            background-color: #315b80;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #193d5c;
+        }
+
+        @media print {
+            body {
+                background: white;
+                margin: 0;
+            }
+
+            .curriculum {
+                width: 100%;
+                border: 1px solid #aaa;
+            }
+
+            .botones {
+                display: none;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .curriculum {
+                width: 100%;
+            }
+
+            .datos {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<form class="curriculum" action="#" method="post"
+      enctype="multipart/form-data">
+
+    <div class="encabezado">
+
+        <div class="titulo">
+            CURRICULUM VITAE
+        </div>
+
+        <div class="foto">
+            <label for="fotografia">FOTO</label>
+            <input type="file" id="fotografia"
+                   name="fotografia" accept="image/*">
+        </div>
+
+    </div>
+
+    <div class="contenido">
+
+        <!-- DATOS PERSONALES -->
+        <h3>DATOS PERSONALES</h3>
+
+        <div class="datos">
+
+            <div class="campo">
+                <label>Apellidos:</label>
+                <input type="text" name="apellidos">
+            </div>
+
+            <div class="campo">
+                <label>Nombre:</label>
+                <input type="text" name="nombre">
+            </div>
+
+            <div class="campo">
+                <label>DNI:</label>
+                <input type="text" name="dni" maxlength="8">
+            </div>
+
+            <div class="campo">
+                <label>Lugar:</label>
+                <input type="text" name="lugar">
+            </div>
+
+            <div class="campo">
+                <label>Fecha de Nacimiento:</label>
+                <input type="date" name="fecha_nacimiento">
+            </div>
+
+            <div class="campo">
+                <label>Dirección:</label>
+                <input type="text" name="direccion">
+            </div>
+
+            <div class="campo">
+                <label>Localidad:</label>
+                <input type="text" name="localidad">
+            </div>
+
+            <div class="campo">
+                <label>Provincia:</label>
+                <input type="text" name="provincia">
+            </div>
+
+            <div class="campo">
+                <label>Teléfono:</label>
+                <input type="tel" name="telefono">
+            </div>
+
+            <div class="campo">
+                <label>Teléfono Móvil:</label>
+                <input type="tel" name="movil">
+            </div>
+
+            <div class="campo">
+                <label>E-Mail:</label>
+                <input type="email" name="email">
+            </div>
+
+        </div>
+
+        <!-- FORMACION Y ESTUDIOS -->
+        <h3>FORMACIÓN Y ESTUDIOS</h3>
+
+        <div class="completo">
+            <label>Titulación:</label>
+            <input type="text" name="titulacion">
+        </div>
+
+        <div class="completo">
+            <label>Idiomas:</label>
+            <input type="text" name="idiomas">
+        </div>
+
+        <div class="completo">
+            <label>Conocimientos informáticos:</label>
+            <input type="text" name="conocimientos">
+        </div>
+
+        <div class="completo">
+            <label>Cursos y seminarios:</label>
+            <input type="text" name="cursos">
+        </div>
+
+        <!-- EXPERIENCIA PROFESIONAL -->
+        <h3>EXPERIENCIA PROFESIONAL</h3>
+
+        <div class="completo">
+            <label>Empresa:</label>
+            <input type="text" name="empresa">
+        </div>
+
+        <div class="completo">
+            <label>Fecha:</label>
+            <input type="text" name="fecha_empresa">
+        </div>
+
+        <div class="completo">
+            <label>Puesto/Actividad desarrollada:</label>
+            <input type="text" name="puesto">
+        </div>
+
+        <!-- DATOS COMPLEMENTARIOS -->
+        <h3>DATOS COMPLEMENTARIOS</h3>
+
+        <textarea name="complementarios"
+          placeholder="Escriba aquí otros datos de interés..."></textarea>
+
+        <p class="declaracion">
+            Todo lo expuesto anteriormente podrá ser acreditado,
+            en caso de solicitud.
+            <br>
+            (Lugar y fecha)
+        </p>
+
+    </div>
+
+    <div class="botones">
+        <button type="submit">Enviar Currículum</button>
+        <button type="reset">Limpiar formulario</button>
+        <button type="button" onclick="window.print()">
+            Imprimir
+        </button>
+    </div>
+
+</form>
+
+</body>
+</html>
